@@ -33,31 +33,31 @@ function App() {
     const electricCarsBase = [
       {
         _id: "1",
-        model: "EQ - ICAR - ICE CREAM",
+        model: "AICAR EQ ICE CREAM",
         autonomia: 170,
         capacidaddebateria: 13.9,
       },
       {
         _id: "2",
-        model: "EQ7 - AIQAR",
+        model: "AICAR EQ7",
         autonomia: 512,
         capacidaddebateria: 66,
       },
       {
         _id: "3",
-        model: "iCAR 03 - ICAR - iCAR 03 4WD",
+        model: "AICAR ICAR 03",
         autonomia: 501,
         capacidaddebateria: 66,
       },
       {
         _id: "4",
-        model: "AYA - NETA - AYA",
+        model: "NETA AYA",
         autonomia: 410,
         capacidaddebateria: 40.7,
       },
       {
         _id: "5",
-        model: "X - NETA - NETAX",
+        model: "NETA X",
         autonomia: 450,
         capacidaddebateria: 64.1,
       },

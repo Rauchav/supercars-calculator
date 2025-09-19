@@ -16,11 +16,11 @@ A React application that compares the costs between gas-powered cars and electri
 
 ## Electric Car Models
 
-1. EQ - ICAR - ICE CREAM
-2. EQ7 - AIQAR
-3. iCAR 03 - ICAR - iCAR 03 4WD
-4. AYA - NETA - AYA
-5. X - NETA - NETAX
+1. AICAR EQ ICE CREAM
+2. AICAR EQ7
+3. AICAR ICAR 03
+4. NETA AYA
+5. NETA X
 
 ## Calculation Logic
 

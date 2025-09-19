@@ -9,23 +9,23 @@ const InitialQuestions = ({ onSubmit }) => {
   const electricCars = [
     {
       id: "1",
-      model: "EQ - ICAR - ICE CREAM",
+      model: "AICAR EQ ICE CREAM",
     },
     {
       id: "2",
-      model: "EQ7 - AIQAR",
+      model: "AICAR EQ7",
     },
     {
       id: "3",
-      model: "iCAR 03 - ICAR - iCAR 03 4WD",
+      model: "AICAR ICAR 03",
     },
     {
       id: "4",
-      model: "AYA - NETA - AYA",
+      model: "NETA AYA",
     },
     {
       id: "5",
-      model: "X - NETA - NETAX",
+      model: "NETA X",
     },
   ];
 
@@ -36,15 +36,13 @@ const InitialQuestions = ({ onSubmit }) => {
   const getCarImage = (carModel) => {
     // Map the car model names to the image names
     const imageMap = {
-      "EQ - ICAR - ICE CREAM": cars.find(
-        (car) => car.name === "ICAR EQ ICE CREAM"
+      "AICAR EQ ICE CREAM": cars.find(
+        (car) => car.name === "AICAR EQ ICE CREAM"
       )?.image,
-      "EQ7 - AIQAR": cars.find((car) => car.name === "AIQAR EQ7")?.image,
-      "iCAR 03 - ICAR - iCAR 03 4WD": cars.find(
-        (car) => car.name === "AICAR ICAR 03"
-      )?.image,
-      "AYA - NETA - AYA": cars.find((car) => car.name === "NETA AYA")?.image,
-      "X - NETA - NETAX": cars.find((car) => car.name === "NETA X")?.image,
+      "AICAR EQ7": cars.find((car) => car.name === "AICAR EQ7")?.image,
+      "AICAR ICAR 03": cars.find((car) => car.name === "AICAR ICAR 03")?.image,
+      "NETA AYA": cars.find((car) => car.name === "NETA AYA")?.image,
+      "NETA X": cars.find((car) => car.name === "NETA X")?.image,
     };
     return imageMap[carModel] || null;
   };

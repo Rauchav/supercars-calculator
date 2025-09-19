@@ -7,12 +7,12 @@ import netaX from "../assets/images/neta x.png";
 export const cars = [
   {
     _id: "1",
-    name: "ICAR EQ ICE CREAM",
+    name: "AICAR EQ ICE CREAM",
     image: eqIceCream,
   },
   {
     _id: "2",
-    name: "AIQAR EQ7",
+    name: "AICAR EQ7",
     image: eq7,
   },
   {
