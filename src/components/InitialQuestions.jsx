@@ -50,8 +50,8 @@ const InitialQuestions = ({ onSubmit }) => {
     }
   };
 
-  const isFormValid = selectedCar && kmPerDay >= 10 && kmPerDay <= 100;
-  const showKmError = kmPerDay !== "" && (kmPerDay < 10 || kmPerDay > 100);
+  const isFormValid = selectedCar && kmPerDay >= 5 && kmPerDay <= 65;
+  const showKmError = kmPerDay !== "" && (kmPerDay < 5 || kmPerDay > 65);
 
   return (
     <div className="initial-questions">
@@ -105,18 +105,16 @@ const InitialQuestions = ({ onSubmit }) => {
               <div className="km-input-container">
                 <input
                   type="number"
-                  min="10"
-                  max="100"
+                  min="5"
+                  max="65"
                   value={kmPerDay}
                   onChange={handleKmChange}
-                  placeholder="Ingresa un número entre 10 y 100"
+                  placeholder="Ingresa un número entre 5 y 65"
                   className="km-input"
                 />
                 <span className="km-label">km/día</span>
                 {showKmError && (
-                  <div className="km-error">
-                    Ingresa un número entre 10 a 100
-                  </div>
+                  <div className="km-error">Ingresa un número entre 5 a 65</div>
                 )}
               </div>
             </div>
