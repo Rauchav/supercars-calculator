@@ -7,6 +7,7 @@ const ParticipantModal = ({ onSubmit, onClose }) => {
     lastName: "",
     phone: "",
     email: "",
+    region: "",
   });
 
   const handleInputChange = (e) => {
@@ -23,14 +24,19 @@ const ParticipantModal = ({ onSubmit, onClose }) => {
       formData.name &&
       formData.lastName &&
       formData.phone &&
-      formData.email
+      formData.email &&
+      formData.region
     ) {
       onSubmit(formData);
     }
   };
 
   const isFormValid =
-    formData.name && formData.lastName && formData.phone && formData.email;
+    formData.name &&
+    formData.lastName &&
+    formData.phone &&
+    formData.email &&
+    formData.region;
 
   return (
     <div className="modal-overlay">
@@ -103,6 +109,30 @@ const ParticipantModal = ({ onSubmit, onClose }) => {
                 onChange={handleInputChange}
                 required
               />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="region">
+                ¿Desde qué región del país nos visitas?
+              </label>
+              <select
+                id="region"
+                name="region"
+                value={formData.region}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="">Selecciona una región</option>
+                <option value="La Paz">La Paz</option>
+                <option value="Cochabamba">Cochabamba</option>
+                <option value="Santa Cruz">Santa Cruz</option>
+                <option value="Pando">Pando</option>
+                <option value="Beni">Beni</option>
+                <option value="Oruro">Oruro</option>
+                <option value="Potosi">Potosi</option>
+                <option value="Sucre">Sucre</option>
+                <option value="Tarija">Tarija</option>
+              </select>
             </div>
 
             <button
