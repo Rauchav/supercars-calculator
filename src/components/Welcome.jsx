@@ -8,7 +8,7 @@ const Welcome = ({ onCalculateClick }) => {
       <img src={cover} alt="arte de supercars" className="cover-image" />
       <div className="welcome-container">
         <div className="welcome-content">
-          <h1 className="welcome-title">Bienvenido</h1>
+          <h1 className="welcome-title">Bienvenidos</h1>
 
           <h2 className="welcome-subtitle">a la calculadora del ahorro de</h2>
           <img src={logo} alt="logo de supercars" className="logo" />
