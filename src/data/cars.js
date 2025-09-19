@@ -7,27 +7,27 @@ import netaX from "../assets/images/neta x.png";
 export const cars = [
   {
     _id: "1",
-    name: "EQ - ICAR - ICE CREAM",
+    name: "ICAR EQ ICE CREAM",
     image: eqIceCream,
   },
   {
     _id: "2",
-    name: "EQ7 - AIQAR",
+    name: "AIQAR EQ7",
     image: eq7,
   },
   {
     _id: "3",
-    name: "iCAR 03 - ICAR - iCAR 03 4WD",
+    name: "AICAR ICAR 03",
     image: icarI3,
   },
   {
     _id: "4",
-    name: "AYA - NETA - AYA",
+    name: "NETA AYA",
     image: netaAya,
   },
   {
     _id: "5",
-    name: "X - NETA - NETAX",
+    name: "NETA X",
     image: netaX,
   },
 ];

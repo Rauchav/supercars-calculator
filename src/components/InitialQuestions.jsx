@@ -34,8 +34,19 @@ const InitialQuestions = ({ onSubmit }) => {
   };
 
   const getCarImage = (carModel) => {
-    const carData = cars.find((car) => car.name === carModel);
-    return carData ? carData.image : null;
+    // Map the car model names to the image names
+    const imageMap = {
+      "EQ - ICAR - ICE CREAM": cars.find(
+        (car) => car.name === "ICAR EQ ICE CREAM"
+      )?.image,
+      "EQ7 - AIQAR": cars.find((car) => car.name === "AIQAR EQ7")?.image,
+      "iCAR 03 - ICAR - iCAR 03 4WD": cars.find(
+        (car) => car.name === "AICAR ICAR 03"
+      )?.image,
+      "AYA - NETA - AYA": cars.find((car) => car.name === "NETA AYA")?.image,
+      "X - NETA - NETAX": cars.find((car) => car.name === "NETA X")?.image,
+    };
+    return imageMap[carModel] || null;
   };
 
   const handleKmChange = (e) => {

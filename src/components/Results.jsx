@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FaGasPump } from "react-icons/fa6";
+import { MdElectricBolt } from "react-icons/md";
 import "./Results.css";
 
 const Results = ({ results, onCalculateAgain }) => {
@@ -38,42 +40,7 @@ const Results = ({ results, onCalculateAgain }) => {
             <div className="comparison-column">
               <div className="car-info">
                 <div className="car-icon">
-                  <svg
-                    width="48"
-                    height="48"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3 17H21L19 9H5L3 17Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <circle
-                      cx="8"
-                      cy="17"
-                      r="2"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    />
-                    <circle
-                      cx="16"
-                      cy="17"
-                      r="2"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    />
-                    <path
-                      d="M6 9L8 3H16L18 9"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <FaGasPump size={48} />
                 </div>
 
                 <h3 className="car-model">{currentGasCar.model}</h3>
@@ -131,49 +98,7 @@ const Results = ({ results, onCalculateAgain }) => {
             <div className="comparison-column">
               <div className="car-info">
                 <div className="car-icon electric">
-                  <svg
-                    width="48"
-                    height="48"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3 17H21L19 9H5L3 17Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <circle
-                      cx="8"
-                      cy="17"
-                      r="2"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    />
-                    <circle
-                      cx="16"
-                      cy="17"
-                      r="2"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    />
-                    <path
-                      d="M6 9L8 3H16L18 9"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M12 5L14 7L12 9"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <MdElectricBolt size={48} />
                 </div>
 
                 <h3 className="car-model">{results.electricCar.model}</h3>
