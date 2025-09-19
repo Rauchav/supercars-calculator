@@ -270,7 +270,7 @@ const Results = ({ results, onCalculateAgain }) => {
                 Ahorro mensual total si te cambias a un automóvil 100% eléctrico
               </h3>
               <div className="savings-amount">
-                {currentMonthlySavings.toFixed(2)} Bs
+                {Math.round(currentMonthlySavings)} Bs
               </div>
             </div>
 
@@ -279,7 +279,7 @@ const Results = ({ results, onCalculateAgain }) => {
                 Ahorro anual total si te cambias a un automóvil 100% eléctrico
               </h3>
               <div className="savings-amount">
-                {currentAnnualSavings.toFixed(2)} Bs
+                {Math.round(currentAnnualSavings)} Bs
               </div>
             </div>
           </div>
