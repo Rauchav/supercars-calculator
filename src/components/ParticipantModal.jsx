@@ -1,5 +1,9 @@
 import { useState } from "react";
 import "./ParticipantModal.css";
+import {
+  sendParticipantToGoogleSheets,
+  formatParticipantData,
+} from "../services/googleSheetsService";
 
 const ParticipantModal = ({ onSubmit, onClose }) => {
   const [formData, setFormData] = useState({
@@ -9,6 +13,8 @@ const ParticipantModal = ({ onSubmit, onClose }) => {
     email: "",
     region: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -18,7 +24,7 @@ const ParticipantModal = ({ onSubmit, onClose }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (
       formData.name &&
@@ -27,7 +33,26 @@ const ParticipantModal = ({ onSubmit, onClose }) => {
       formData.email &&
       formData.region
     ) {
-      onSubmit(formData);
+      setIsSubmitting(true);
+      setSubmitMessage("");
+
+      try {
+        // Send data to Google Sheets
+        const formattedData = formatParticipantData(formData);
+        await sendParticipantToGoogleSheets(formattedData);
+
+        setSubmitMessage("Datos guardados exitosamente!");
+
+        // Continue with the original onSubmit callback
+        onSubmit(formData);
+      } catch (error) {
+        console.error("Error saving participant data:", error);
+        setSubmitMessage(
+          "Error al guardar los datos. Por favor, inténtalo de nuevo."
+        );
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -36,7 +61,8 @@ const ParticipantModal = ({ onSubmit, onClose }) => {
     formData.lastName &&
     formData.phone &&
     formData.email &&
-    formData.region;
+    formData.region &&
+    !isSubmitting;
 
   return (
     <div className="modal-overlay">
@@ -135,12 +161,22 @@ const ParticipantModal = ({ onSubmit, onClose }) => {
               </select>
             </div>
 
+            {submitMessage && (
+              <div
+                className={`submit-message ${
+                  submitMessage.includes("Error") ? "error" : "success"
+                }`}
+              >
+                {submitMessage}
+              </div>
+            )}
+
             <button
               type="submit"
               className={`submit-button ${isFormValid ? "valid" : "invalid"}`}
               disabled={!isFormValid}
             >
-              Continuar
+              {isSubmitting ? "Guardando..." : "Continuar"}
             </button>
           </form>
         </div>
